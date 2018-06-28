@@ -4,12 +4,14 @@ SHELL = /bin/bash
 all: setup test
 
 setup:
+	apt install python-lxml
 	pip install -U nltk
 	$(PYTHON_27) -c "import nltk; nltk.download('punkt')"
 	pip install python-Levenshtein
 	pip install pyyaml
 	pip install nose
 	pip install joblib
+	pip install lxml
 
 test: 
 	nosetests
